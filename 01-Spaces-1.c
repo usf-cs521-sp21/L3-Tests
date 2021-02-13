@@ -59,4 +59,12 @@ subtest("No spaces == no changes to the string",
     test_assert_str(result, "==", "BROADBND=1", 11);
 });
 
+subtest("Sanity check for NULL arguments",
+{
+    char *test = "hi";
+    remove_spaces(test, NULL);
+    remove_spaces(NULL, test);
+    remove_spaces(NULL, NULL);
+});
+
 test_end
